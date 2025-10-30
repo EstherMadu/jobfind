@@ -1,9 +1,36 @@
 import bestJob from "../assets/images/best_job.svg";
-import June from "../assets/images/june_12.svg";
+import June from "../assets/images/june.svg";
 import smartNudges from "../assets/images/smart_nudges.svg";
-import fiftyFour from "../assets/images/fifty-four.png";
 import Dod from "../assets/images/director_of_designs.svg";
-import LoadingScore from "../assets/images/loading_bar.svg";
+import LoadingJob from "../assets/images/loading_job.svg";
+import pattern from "../assets/images/background_pattern.svg"; 
+const features = [
+  {
+    title: "Career Mapping Engine",
+    desc: "AI-powered career path prediction.",
+    img: Dod,
+  },
+  {
+    title: "Application Tracker",
+    desc: "Track resume views, rejections, assessments, interview dates.",
+    img: June,
+  },
+  {
+    title: "FitScore",
+    desc: "Get instant compatibility ratings for every role.",
+    img: LoadingJob,
+  },
+  {
+    title: "Visa Filter",
+    desc: "Navigate international opportunities with confidence.",
+    img: bestJob,
+  },
+  {
+    title: "Clarity Engine",
+    desc: "Daily micro-actions and suggested learning to close gaps.",
+    img: smartNudges,
+  },
+];
 
 export default function JobFeatures() {
   return (
@@ -14,101 +41,53 @@ export default function JobFeatures() {
           Smart Features for Career Growth
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Our AI technology revolutionizes how you discover and apply to opportunities that
-          match your unique profile and career aspirations.
+          Our AI technology revolutionizes how you discover and apply to
+          opportunities that match your unique profile and career aspirations.
         </p>
       </div>
 
-
+      {/* Feature Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Career Mapping Engine */}
-        <div className="bg-[#0B0C10] rounded-2xl p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition-transform">
-          <div className="relative w-full h-44 flex items-center justify-center mb-4">
-            <img
-              src={Dod}
-              alt="Career Mapping Front"
-              className="absolute w-full max-w-[370px]"
-            />
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="relative rounded-2xl p-6 text-white shadow-lg hover:-translate-y-1 transition-transform overflow-hidden"
+            style={{
+              backgroundColor: "#0B0C10",
+              backgroundImage: `url(${pattern})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "top center",
+              backgroundSize: "100% 70%", 
+            }}
+          >
+            <div className="relative w-full h-44 flex items-center justify-center mb-4">
+              <img
+                src={feature.img}
+                alt={feature.title}
+                className="w-[95%] max-w-[340px] pt-6 pb-4 rounded-xl shadow-xl"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-center">
+              {feature.title}
+            </h3>
+            <p className="text-gray-300 text-center text-sm">
+              {feature.desc}
+            </p>
           </div>
-          <h3 className="text-xl font-semibold mb-2">Career Mapping Engine</h3>
-          <p className="text-gray-300 text-center text-sm">
-            AI-powered career path prediction.
-          </p>
-        </div>
+        ))}
 
-        {/* Application Tracker */}
-        <div className="bg-[#0B0C10] rounded-2xl p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition-transform">
-          <div className="relative w-full h-44 flex items-center justify-center mb-4">
-            <img
-              src={fiftyFour}
-              alt="Application Tracker Back"
-              className="absolute w-[90%] max-w-[280px] -translate-x-4 translate-y-6 opacity-90"
-            />
-            <img
-              src={June}
-              alt="Application Tracker Front"
-              className="absolute w-[90%] max-w-[320px] translate-x-10 -translate-y-3 z-10"
-            />
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Application Tracker</h3>
-          <p className="text-gray-300 text-center text-sm">
-            Track resume views, rejections, assessments, interview dates.
-          </p>
-        </div>
-
-        {/* FitScore */}
-        <div className="bg-[#0B0C10] rounded-2xl p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition-transform">
-          <div className="relative w-full h-44 flex items-center justify-center mb-4">
-             <img
-              src={LoadingScore}
-              alt="LoadingScore"
-              className="absolute w-[100%] max-w-[280px] translate-x-2 translate-y-6 opacity-90"
-            />
-            <img
-              src={LoadingScore}
-              alt="LoadingScore"
-              className="absolute w-[100%] max-w-[320px] -translate-x-4 -translate-y-3 z-10"
-            />
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Fit Score</h3>
-          <p className="text-gray-300 text-center text-sm">
-            Get instant compatibility ratings for every role.
-          </p>
-        </div>
-
-        {/* Visa Filter */}
-        <div className="bg-[#0B0C10] rounded-2xl p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition-transform">
-          <div className="relative w-full h-44 flex items-center justify-center mb-4">
-            <img
-              src={bestJob}
-              alt="Visa Filter"
-              className="w-[85%] max-w-[320px] rounded-xl shadow-xl"
-            />
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Visa Filter</h3>
-          <p className="text-gray-300 text-center text-sm">
-            Navigate international opportunities with confidence.
-          </p>
-        </div>
-
-        {/* Clarity Engine */}
-        <div className="bg-[#0B0C10] rounded-2xl p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition-transform">
-          <div className="relative w-full h-44 flex items-center justify-center mb-4">
-            <img
-              src={smartNudges}
-              alt="Clarity Engine"
-              className="w-[80%] max-w-[340px] rounded-xl shadow-xl"
-            />
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Clarity Engine</h3>
-          <p className="text-gray-300 text-center text-sm">
-            Daily micro-actions and suggested learning to close gaps.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="bg-[#0B0C10] rounded-2xl p-8 flex flex-col items-center justify-center shadow-lg hover:-translate-y-1 transition-transform">
-          <h3 className="text-2xl font-semibold mb-6 text-white text-center">
+        {/* CTA Card */}
+        <div
+          className="relative rounded-2xl flex flex-col justify-center items-center p-10 text-white shadow-lg hover:-translate-y-1 transition-transform"
+          style={{
+            backgroundColor: "#0B0C10",
+            backgroundImage: `url(${pattern})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "top center",
+            backgroundSize: "100% 70%",
+          }}
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-center">
             Ready to begin your career journey?
           </h3>
           <button className="bg-[#576ADF] hover:bg-[#4A5ED1] transition-all text-white px-12 py-2 rounded-md font-medium">

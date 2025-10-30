@@ -58,7 +58,11 @@ const HeroSection = () => {
 
       {showLogos && (
         <div className="mt-16 w-full px-4 text-center animate-fade-in-slow">
-          <p className="text-base sm:text-lg text-[#1E254E] mb-6">
+          <div className="p-10">
+  <h1 className="font-clash text-4xl text-black">This should be Clash Display</h1>
+  <p className="font-lato text-gray-600 mt-2">This should be Lato Regular</p>
+</div>
+          <p className="font-lato text-base sm:text-lg text-[#1E254E] mb-6">
             Job opportunities from top companies and more
           </p>
           <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 sm:gap-12 my-8">
